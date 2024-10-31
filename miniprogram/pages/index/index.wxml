@@ -7,6 +7,6 @@
     <my-swiper />
     <my-category />
   </view>
-  <view class="text">推荐景点</view>
+  <view class="text">热门景点</view>
   <homelist></homelist>
 </view>

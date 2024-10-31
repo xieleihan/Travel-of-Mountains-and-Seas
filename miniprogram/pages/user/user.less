@@ -1,1 +1,136 @@
 /* pages/user/user.wxss */
+.user{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(@themeColor, transparent);
+  .avater{
+    width: 100%;
+    padding: 0 30rpx;
+    display: flex;
+    flex-direction: row;
+    height: 280rpx;
+    align-items: center;
+    position: relative;
+    .img{
+      width: 160rpx;
+      height: 160rpx;
+      border-radius: 50%;
+    }
+    .left{
+      margin-right: 40rpx;
+    }
+    .right{
+      display: flex;
+      flex-direction: column;
+      .username{
+        font-size: 50rpx;
+        font-weight: bold;
+        margin-bottom: 20rpx;
+      }
+    }
+    .rigthFunction{
+      position: absolute;
+      top: 50%;
+      right: 100rpx;
+      transform: translateY(-50%) rotate(-180deg);
+      image{
+        width: 50rpx;
+        height: 50rpx;
+      }
+    }
+  }
+
+  .function{
+    width: 100%;
+    height: 250rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container{
+      height: 90%;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-radius: 20rpx;
+      background-color: rgba(255, 255, 255, .9);
+      .item{
+        width: calc(100% / 4);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        image{
+          width: 80rpx;
+          height: 80rpx;
+          margin-bottom: 20rpx;
+        }
+      }
+    }
+  }
+}
+
+.card{
+  width: 100%;
+  height: 300rpx;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  .left{
+    height: 300rpx;
+    position: relative;
+    width: 45%;
+    border-radius: 20rpx;
+    background-color: @googleyellow;
+    .vipbox{
+      width: 150rpx;
+      height: 150rpx;
+      margin: 20rpx 0 0 20rpx;
+    }
+    text{
+      color: #fff;
+      font-size: 70rpx;
+      font-weight: bold;
+      position: absolute;
+      bottom: 20rpx;
+      right: 20rpx;
+    }
+  }
+  .right{
+    height: 300rpx;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .icon{
+      width: 70rpx;
+      height: 70rpx;
+      margin-left: 20rpx;
+      margin-top: 20rpx;
+    }
+    text{
+      position: absolute;
+      bottom: 20rpx;
+      right: 20rpx;
+      color: #fff;
+      font-weight: bold;
+      font-size: 40rpx;
+    }
+    .top{
+      height: 45%;
+      width: 90%;
+      border-radius: 20rpx;
+      background-color: @googlered;
+      position: relative;
+    }
+    .bottom{
+      height: 45%;
+      width: 90%;
+      background-color: @googleblue;
+      border-radius: @radius;
+      position: relative;
+    }
+  }
+}

@@ -1,2 +1,42 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="user">
+  <view class="avater">
+    <view class="left">
+      <image class="img" src="/assets/images/avater.png" mode=""/>
+    </view>
+    <view class="right">
+      <text class="username">这是用户名</text>
+      <text class="userinfo">这是用户描述</text>
+    </view>
+
+    <view class="rigthFunction">
+      <image src="/assets/icon/left.png" mode=""/>
+    </view>
+  </view>
+  <view class="function">
+    <view class="container">
+      <block wx:for="{{functionList}}" wx:key="index">
+        <view class="item">
+          <image src="{{item.icon}}" mode=""/>
+          <text style="color: {{item.color}};">{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="card">
+  <view class="left">
+    <image class="vipbox" src="/assets/icon/vipbox.png" mode=""/>
+    <text>会员</text>
+  </view>
+  <view class="right">
+    <view class="top">
+      <image class="icon" src="/assets/icon/shouchan.png" mode=""/>
+      <text>收藏</text>
+    </view>
+    <view class="bottom">
+      <image class="icon" src="/assets/icon/setting.png" mode=""/>
+      <text>设置</text>
+    </view>
+  </view>
+</view>
