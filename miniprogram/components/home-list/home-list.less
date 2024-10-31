@@ -1,0 +1,49 @@
+/* components/home-list/home-list.wxss */
+.homelist{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .container{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .item{
+      width: 48%;
+      display: flex;
+      border-radius: 20rpx;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      flex-direction: column;
+      margin-bottom: 20rpx;
+      padding-bottom: 20rpx;
+      &:nth-child(2n){
+        margin-left: 19rpx;
+      }
+      image{
+        width: 100%;
+        height: 300rpx;
+      }
+      .title{
+        font-size: 40rpx;
+        font-weight: bold;
+        margin-top: 10rpx;
+      }
+      .info{
+        font-size: 28rpx;
+        color: #ccc;
+      }
+      .picel{
+        color: orange;
+        font-size: 32rpx;
+        text{
+          padding: 0;
+        }
+      }
+      text{
+        padding: 0 30rpx;
+      }
+    }
+  }
+}

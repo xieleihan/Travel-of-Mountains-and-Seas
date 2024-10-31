@@ -1,0 +1,19 @@
+<!--components/home-list/home-list.wxml-->
+<view class="homelist">
+  <view class="container">
+    <!-- <view class="item">
+      <image src="https://picsum.photos/200/300" mode="" />
+      <text class="title">title</text>
+      <text class="info">info</text>
+      <text class="picel">$<text>299.00</text></text>
+    </view> -->
+    <block wx:for="{{homelist}}" wx:key="index">
+      <view class="item">
+        <image src="{{item.pic}}" mode="" />
+        <text class="title">{{item.title}}</text>
+        <text class="info">{{item.info}}</text>
+        <text class="picel">$<text>{{item.picel}}</text></text>
+      </view>
+    </block>
+  </view>
+</view>

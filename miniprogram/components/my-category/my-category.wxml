@@ -1,0 +1,13 @@
+<!--components/my-category/my-category.wxml-->
+<view class="category">
+  <view class="container">
+    <block wx:for="{{categoryList}}" wx:key="index">
+      <view class="item">
+        <view class="smallbox" style="background-color: {{item.bgColor}};">
+          <image src="{{item.icon}}" alt="" />
+        </view>
+        <text>{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+</view>

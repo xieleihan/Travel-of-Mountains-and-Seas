@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "my-swiper": "/components/my-swiper/my-swiper",
+    "my-category": "/components/my-category/my-category",
+    "homelist":"/components/home-list/home-list"
+  }
+}
