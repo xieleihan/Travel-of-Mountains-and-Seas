@@ -5,14 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    shopcarList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    const app = getApp();
+    this.setData({
+      shopcarList : app.globalData.shopcarList
+    })
   },
 
   /**
@@ -40,7 +43,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    
   },
 
   /**
@@ -62,5 +65,7 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+
+
 })

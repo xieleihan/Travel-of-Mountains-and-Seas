@@ -1,1 +1,122 @@
 /* pages/shopcar/shopcar.wxss */
+.shopcar{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  .topTitle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100rpx;
+    background-color: @googlegreen;
+    color: white;
+  }
+
+  .container{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx 30rpx;
+    padding-bottom: 120rpx;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    .item{
+      width: 100%;
+      height: 200rpx;
+      border: 1px solid #ccc;
+      border-radius: @radius;
+      display: flex;
+      justify-content: space-between;
+      padding: 0rpx 30rpx;
+      box-sizing: border-box;
+      align-items: center;
+      margin-bottom: 20rpx;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .left{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .img{
+          width: 150rpx;
+          height: 150rpx;
+          margin: 0 15rpx;
+        }
+        .title{
+          font-weight: bold;
+          margin-bottom: 15rpx;
+        }
+        .picel{
+          color: orange;
+        }
+      }
+      .right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .box{
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 20rpx;
+          view{
+            width: 50rpx;
+            height: 50rpx;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .picel{
+          color: orange;
+        }
+      }
+    }
+  }
+
+  .bottomAreo{
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    height: 100rpx;
+    padding: 0 30rpx;
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .left{
+      display: flex;
+      align-items: center;
+      .inputword{
+        margin-left: 15rpx;
+      }
+    }
+
+    .right{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+      .sendpay{
+        width: 200rpx;
+        height: 80%;
+        background-color: @googlegreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: @radius;
+        margin-left: 15rpx;
+      }
+      .clear{
+        color: #ccc;
+      }
+    }
+  }
+}

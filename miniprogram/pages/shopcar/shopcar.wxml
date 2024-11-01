@@ -1,2 +1,56 @@
 <!--pages/shopcar/shopcar.wxml-->
-<text>pages/shopcar/shopcar.wxml</text>
+<view class="shopcar">
+  <view class="topTitle">购物车</view>
+
+  <view class="container">
+    <!-- <view class="item">
+      <view class="left">
+        <checkbox value=""/>
+        <image class="img" src="https://picsum.photos/300/300" mode=""/>
+        <view class="infoBox">
+          <view class="title">这是标题</view>
+          <view class="picel">$<text>199.00</text></view>
+        </view>
+      </view>
+      <view class="right">
+        <view class="box">
+          <view class="sub" bind:tap="sub">-</view>
+          <view class="num">1</view>
+          <view class="plus" bind:tap="plus">+</view>
+        </view>
+        <view class="picel">$<text>199.00</text></view>
+      </view>
+    </view> -->
+    <block wx:for="{{shopcarList}}" wx:key="index" data-index="{{index}}">
+      <view class="item">
+        <view class="left">
+          <checkbox value=""/>
+          <image class="img" src="{{item.pic}}" mode=""/>
+          <view class="infoBox">
+            <view class="title">{{item.title}}</view>
+            <view class="picel">$<text>{{item.picel}}</text></view>
+          </view>
+        </view>
+        <view class="right">
+          <view class="box">
+            <view class="sub" bind:tap="sub">-</view>
+            <view class="num">{{item.num}}</view>
+            <view class="plus" bind:tap="plus">+</view>
+          </view>
+          <view class="picel">$<text>{{item.picel}}</text></view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="bottomAreo">
+    <view class="left">
+      <checkbox value=""/>
+      <text class="inputword">全选</text>
+    </view>
+    <view class="right">
+      <view class="clear">清空购物车</view>
+      <view class="sendpay">继续支付</view>
+    </view>
+  </view>
+</view>
