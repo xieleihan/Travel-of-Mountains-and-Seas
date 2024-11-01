@@ -1,2 +1,19 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="category">
+  <view class="left">
+    <block wx:for="{{provinces}}" wx:key="index">
+      <view class="item {{selectedIndex === index ? 'active' : ''}}" bind:tap="onItemTap" data-index="{{index}}">
+        <view class="text">
+          {{item}}
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="right">
+    <block wx:for="{{cittyList}}" wx:key="index">
+      <view class="item">
+        {{item}}
+      </view>
+    </block>
+  </view>
+</view>
