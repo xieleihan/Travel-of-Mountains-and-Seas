@@ -21,23 +21,23 @@
         <view class="picel">$<text>199.00</text></view>
       </view>
     </view> -->
-    <block wx:for="{{shopcarList}}" wx:key="index" data-index="{{index}}">
+    <block wx:for="{{shopcarList}}" wx:key="index" >
       <view class="item">
         <view class="left">
-          <checkbox value=""/>
+          <checkbox bind:tap="isOpenAll" checked="{{ item.isSelected}}" value="" data-index="{{index}}"/>
           <image class="img" src="{{item.pic}}" mode=""/>
           <view class="infoBox">
             <view class="title">{{item.title}}</view>
-            <view class="picel">$<text>{{item.picel}}</text></view>
+            <view class="picel" data-index="{{index}}">$<text data-index="{{index}}">{{item.picel}}</text></view>
           </view>
         </view>
         <view class="right">
           <view class="box">
-            <view class="sub" bind:tap="sub">-</view>
-            <view class="num">{{item.num}}</view>
-            <view class="plus" bind:tap="plus">+</view>
+            <view class="sub" bind:tap="sub" data-index="{{index}}">-</view>
+            <view class="num" data-index="{{index}}">{{item.num}}</view>
+            <view class="plus" bind:tap="plus" data-index="{{index}}">+</view>
           </view>
-          <view class="picel">$<text>{{item.picel}}</text></view>
+          <view class="picel">$<text>{{item.totalPrice}}</text></view>
         </view>
       </view>
     </block>
@@ -45,8 +45,12 @@
 
   <view class="bottomAreo">
     <view class="left">
-      <checkbox value=""/>
+      <checkbox checked="{{all}}" value="" bind:tap="toggleAllopen"/>
       <text class="inputword">全选</text>
+      <view class="totel">
+        <view class="sumnum">总数：<text class="text">{{count.sumnum}}</text></view>
+        <view class="sumtotel">总价：<text class="text">{{count.sumtotel}}</text></view>
+      </view>
     </view>
     <view class="right">
       <view class="clear">清空购物车</view>
