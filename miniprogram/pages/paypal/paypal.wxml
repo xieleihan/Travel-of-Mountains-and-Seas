@@ -1,0 +1,33 @@
+<!--pages/paypal/paypal.wxml-->
+<view class="paypal">
+  <view class="topTitle">付款页面</view>
+  <view class="container">
+    <my-address></my-address>
+    <view class="payinfo">-------- 订单信息 ---------</view>
+
+    <block wx:for="{{paypalList}}" wx:key="index">
+      <view class="item">
+        <view class="left">
+          <image src="{{item.pic}}" mode=""/>
+          <view class="leftbox">
+            <view class="title">{{item.title}}</view>
+            <view>总价：<text class="picel">{{item.totalPrice}}</text></view>
+          </view>
+        </view>
+        <view class="right">
+          <view class="rightBox">x<text>{{item.num}}</text></view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="bottomBox">
+    <view class="left">
+      <view>由WeChat提供技术支持</view>
+      <view>总件数：<text>{{count.sumnum}}</text>总价：<text>${{count.sumtotel}}</text></view>
+    </view>
+    <view class="right">
+      <view>取消支付</view>
+      <view class="pay">立即支付</view>
+    </view>
+  </view>
+</view>

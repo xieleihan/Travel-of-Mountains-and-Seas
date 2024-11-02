@@ -26,11 +26,12 @@ App({
         "totalPrice":"239.33",
         "isSelected":false
       }
-    ],
+    ], // 购物车信息
     count:{
       sumnum:0,
       sumtotel:0
-    }
+    }, //  计数器
+    paypalList:[] // 付款的时候的参数列表
   },
   onLaunch() {
     

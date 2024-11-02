@@ -7,8 +7,15 @@ interface ShopcarItem {
 }
 
 interface countItem{
-  sumnum: number;
+  sumnum: number | string;
   sumtotel: number | string;
+}
+
+interface paypayItem {
+  picel: number | string;
+  num: number | string;
+  totalPrice?: number | string;
+  isSelected:boolean
 }
 
 Page({
@@ -60,6 +67,7 @@ Page({
     this.setData({
         isAllopen: this.data.all
     });
+    this.updateCount();
   },
 
   // 全选的开关
@@ -91,6 +99,7 @@ Page({
         },
         isSumnum: newIsAllOpen ? shopcarList.length : 0 // 更新总数
     });
+    this.updateCount();
   },
 
   /**
@@ -194,13 +203,21 @@ Page({
     const shopcarList = this.data.shopcarList;
     let totalNum = 0;
     let totalPrice = 0;
+    const selectedItems :ShopcarItem[] = [];
 
     shopcarList.forEach(item => {
       if (item.isSelected) {
         totalNum += Number(item.num);
         totalPrice += Number(item.totalPrice);
+        selectedItems.push(item);
       }
     });
+    console.log(totalNum,totalPrice)
+    // 更新全局的 paypalList
+    const app = getApp();
+    app.globalData.paypalList = selectedItems;
+    app.globalData.count.sumnum = totalNum; // 将总数设置到 globalData
+    app.globalData.count.sumtotel = totalPrice.toFixed(2); // 将总价格设置到 globalData
 
     this.setData({
       count: {
@@ -208,5 +225,27 @@ Page({
         sumtotel: totalPrice.toFixed(2) // 确保总价格保留两位小数
       }
     });
+  },
+
+  clearShopcar(){
+    this.setData({
+      shopcarList: []
+    })
+  },
+
+  paypal(){
+    const app =  getApp();
+    console.log(app.globalData.paypalList)
+    if(app.globalData.paypalList.length === 0){
+      wx.showToast({
+        title:'请勾选你所需要的商品',
+        mask:true
+      })
+      return;
+    }else{
+      wx.navigateTo({
+        url: '/pages/paypal/paypal'
+      })
+    }
   }
 })

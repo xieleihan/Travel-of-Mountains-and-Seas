@@ -53,8 +53,8 @@
       </view>
     </view>
     <view class="right">
-      <view class="clear">清空购物车</view>
-      <view class="sendpay">继续支付</view>
+      <view class="clear" bind:tap="clearShopcar">清空购物车</view>
+      <view class="sendpay" bind:tap="paypal">继续支付</view>
     </view>
   </view>
 </view>

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/category/category",
     "pages/shopcar/shopcar",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/paypal/paypal"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -51,5 +52,5 @@
     ]
   },
   "color": "#ccc",
-  "selectedColor":"#279747"
+  "selectedColor": "#279747"
 }

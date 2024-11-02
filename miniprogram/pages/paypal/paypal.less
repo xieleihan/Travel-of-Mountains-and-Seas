@@ -1,0 +1,127 @@
+/* pages/paypal/paypal.wxss */
+.paypal{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  .topTitle{
+    width: 100%;
+    height: 100rpx;
+    background-color: @googlegreen;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 10rpx;
+  }
+  .container{
+    width: 100%;
+    height: calc(100% - 100px);
+    // background-color: skyblue;
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    .payinfo{
+      color: #ccc;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 15rpx 0;
+      
+    }
+    .item{
+      width: 100%;
+      height: 200rpx;
+      border-radius: @radius;
+      border: 1px solid #ccc;
+      display: flex;
+      flex-direction: row;
+      box-sizing: border-box;
+      padding: 0 30rpx;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15rpx;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .left{
+        display: flex;
+        flex-direction: row;
+        image{
+          width: 150rpx;
+          height: 150rpx;
+        }
+        .leftbox{
+          display: flex;
+          justify-content: space-evenly;
+          flex-direction: column;
+          margin-left: 15rpx;
+          .title{
+            font-weight: bold;
+          }
+          .picel{
+            color: orange;
+          }
+        }
+      }
+      .right{
+        .rightBox{
+          border: 1px solid #ccc;
+          padding: 10rpx;
+          border-radius: @radius;
+          text{
+            margin-left: 5rpx;
+          }
+        }
+      }
+    }
+  }
+
+  .bottomBox{
+    width: 100%;
+    height: 100rpx;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    align-items: center;
+    .left{
+      font-size: 24rpx;
+      text{
+        color: orange;
+        &:first-child{
+          margin-right: 5rpx;
+        }
+      }
+    }
+    .right{
+      display: flex;
+      flex-direction: row;
+      view{
+        width: 150rpx;
+        height: 70rpx;
+        color: white;
+        border-radius: @radius;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 12rpx;
+        &:first-child{
+          background-color: @googlered;
+          margin-right: 10rpx;
+        }
+        &:last-child{
+          background-color: @googleblue;
+        }
+      }
+    }
+  }
+}

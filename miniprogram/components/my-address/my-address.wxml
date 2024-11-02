@@ -1,0 +1,19 @@
+<!--components/my-address/my-address.wxml-->
+<view class="addressBox">
+  <view class="boxcom">
+    <view class="top">
+      <text>苏梓扬</text>
+      <text>19907686060</text>
+    </view>
+    <view class="info">广东省广州市白云区钟落潭镇广从九路1038号广州科技职业技术大学</view>
+    <view class="bottom">
+      <view class="left">
+        <checkbox value=""/>
+        <text class="default">设置为默认</text>
+      </view>
+      <view class="right">
+        修改信息
+      </view>
+    </view>
+  </view>
+</view>
