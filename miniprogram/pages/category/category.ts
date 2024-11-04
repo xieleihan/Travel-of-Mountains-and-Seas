@@ -14,6 +14,18 @@ Page({
     cittyList:[]
   },
 
+  goToItemPages(event: WechatMiniprogram.TouchEvent){
+    const index = event.currentTarget.dataset.index;
+    // console.log(index)
+    const item = this.data.cittyList[index];
+    console.log('点击的 item:', item);
+    const app = getApp()
+    app.globalData.selectCity = item
+    wx.navigateTo({
+      url:"/pages/cityinfo/cityinfo"
+    })
+  },
+
   onItemTap: function(event: { currentTarget: { dataset: { index: any; }; }; }) {
     const index = event.currentTarget.dataset.index;
     this.setData({

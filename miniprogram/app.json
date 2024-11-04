@@ -4,7 +4,8 @@
     "pages/category/category",
     "pages/shopcar/shopcar",
     "pages/user/user",
-    "pages/paypal/paypal"
+    "pages/paypal/paypal",
+    "pages/cityinfo/cityinfo"
   ],
   "window": {
     "navigationBarTextStyle": "black",

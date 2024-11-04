@@ -1,0 +1,32 @@
+<!--pages/cityinfo/cityinfo.wxml-->
+<view class="homeinfo">
+  <block wx:if="{{isOpen}}">
+    <view class="topimg">
+    <image src="{{cityinfo.pic}}" mode=""/>
+    <view class="titleBox">
+      <text class="title">{{cityinfo.cityname}}</text>
+    </view>
+    </view>
+    <view class="function">
+    <view class="shopcar">
+      <image src="/assets/icon/shopcar_heightlight.png" mode=""/>
+      <text>购物车</text>
+    </view>
+    <view class="picelBox">
+      <text class="picel">${{cityinfo.picel}}</text>
+    </view>
+    </view>
+    <view class="info">
+    {{cityinfo.info}}
+    </view>
+    <view class="other">
+      <text>查看更多热门景点</text>
+    </view>
+  </block>
+  <block wx:else="{{isOpen}}">
+    <view class="error">
+      <image src="/assets/icon/404.png" alt=""/>
+      <text>你来到无人问津的荒漠</text>
+    </view>
+  </block>
+</view>

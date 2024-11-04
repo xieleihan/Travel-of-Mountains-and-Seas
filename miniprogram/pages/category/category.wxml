@@ -11,7 +11,7 @@
   </view>
   <view class="right">
     <block wx:for="{{cittyList}}" wx:key="index">
-      <view class="item">
+      <view class="item" bind:tap="goToItemPages" data-index="{{index}}">
         {{item}}
       </view>
     </block>
