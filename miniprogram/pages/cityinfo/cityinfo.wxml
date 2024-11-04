@@ -8,7 +8,7 @@
     </view>
     </view>
     <view class="function">
-    <view class="shopcar">
+    <view class="shopcar" bind:tap="addInfo">
       <image src="/assets/icon/shopcar_heightlight.png" mode=""/>
       <text>购物车</text>
     </view>
@@ -22,6 +22,7 @@
     <view class="other">
       <text>查看更多热门景点</text>
     </view>
+    <homelist></homelist>
   </block>
   <block wx:else="{{isOpen}}">
     <view class="error">

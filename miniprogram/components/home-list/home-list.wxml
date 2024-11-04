@@ -8,7 +8,7 @@
       <text class="picel">$<text>299.00</text></text>
     </view> -->
     <block wx:for="{{homelist}}" wx:key="index">
-      <view class="item">
+      <view class="item" data-index="{{index}}" bind:tap="getCardInfo">
         <image src="{{item.pic}}" mode="" />
         <text class="title">{{item.title}}</text>
         <text class="info">{{item.info}}</text>

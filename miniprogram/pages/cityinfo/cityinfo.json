@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "homelist":"/components/home-list/home-list"
+  }
 }

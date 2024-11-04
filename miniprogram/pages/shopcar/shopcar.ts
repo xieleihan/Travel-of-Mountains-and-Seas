@@ -3,7 +3,8 @@ interface ShopcarItem {
   picel: number | string;
   num: number | string;
   totalPrice?: number | string;
-  isSelected:boolean
+  isSelected:boolean;
+  title: string
 }
 
 interface countItem{
@@ -136,7 +137,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    const app = getApp();
+    const count = app.globalData.count
+    // console.log(count)
+    const shopcarList = app.globalData.shopcarList.map((item:any) => {
+      return {
+        ...item,
+        totalPrice: (Number(item.picel) * Number(item.num)).toFixed(2)
+      };
+    });
+    // console.log(shopcarList)
+    this.setData({
+      shopcarList : shopcarList,
+      isSumnum: shopcarList.length,
+      count: count
+    })
+    console.log(this.data.count)
+    // console.log(this.data.isSumnum)
   },
 
   /**
@@ -157,7 +174,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    
   },
 
   /**
@@ -231,6 +248,8 @@ Page({
     this.setData({
       shopcarList: []
     })
+    const app = getApp()
+    app.globalData.shopcarList = []
   },
 
   paypal(){
@@ -247,5 +266,17 @@ Page({
         url: '/pages/paypal/paypal'
       })
     }
+  },
+
+  goToInfoPage(event:WechatMiniprogram.TouchEvent){
+    const index = event.currentTarget.dataset.index;
+      // console.log(index,this.data.shopcarList[index].title)
+    const app = getApp()
+
+    app.globalData.selectCity = this.data.shopcarList[index].title
+
+    wx.navigateTo({
+      url:'/pages/cityinfo/cityinfo'
+    })
   }
 })

@@ -1,0 +1,18 @@
+<!--pages/search/search.wxml-->
+<view class="search">
+  <view class="top">
+    <input class="inputText" type="text" placeholder="请输入你要搜索的地点"/>
+    <button class="searchBtn">全站搜索</button>
+  </view>
+  <view class="container">
+    <block wx:if="{{isOpen}}">
+      
+    </block>
+    <block wx:else="{{isOpen}}">
+      <view class="noSearch">
+        <image src="/assets/icon/noSearch.png" mode=""/>
+        <text>暂无搜索记录</text>
+      </view>
+    </block>
+  </view>
+</view>

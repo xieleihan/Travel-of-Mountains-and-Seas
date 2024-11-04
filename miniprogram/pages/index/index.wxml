@@ -1,8 +1,8 @@
 <view class="home">
   <view class="topCom">
     <view class="top">
-      <input type="text" placeholder="请输入地点"/>
-      <image src="/assets/icon/search.png" mode=""/>
+      <view>{{time}}</view>
+      <image bind:tap="goToSearch" src="/assets/icon/search.png" mode=""/>
     </view>
     <my-swiper />
     <my-category />

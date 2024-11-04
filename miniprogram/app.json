@@ -5,7 +5,8 @@
     "pages/shopcar/shopcar",
     "pages/user/user",
     "pages/paypal/paypal",
-    "pages/cityinfo/cityinfo"
+    "pages/cityinfo/cityinfo",
+    "pages/search/search"
   ],
   "window": {
     "navigationBarTextStyle": "black",

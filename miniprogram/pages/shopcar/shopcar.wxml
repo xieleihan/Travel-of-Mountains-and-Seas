@@ -25,8 +25,8 @@
       <view class="item">
         <view class="left">
           <checkbox bind:tap="isOpenAll" checked="{{ item.isSelected}}" value="" data-index="{{index}}"/>
-          <image class="img" src="{{item.pic}}" mode=""/>
-          <view class="infoBox">
+          <image class="img" data-index="{{index}}" bind:tap="goToInfoPage" src="{{item.pic}}" mode=""/>
+          <view class="infoBox" data-index="{{index}}" bind:tap="goToInfoPage">
             <view class="title">{{item.title}}</view>
             <view class="picel" data-index="{{index}}">$<text data-index="{{index}}">{{item.picel}}</text></view>
           </view>

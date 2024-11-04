@@ -2,6 +2,14 @@
 import {url} from "../../api/index"
 import {get} from "../../api/request"
 
+interface homelistItem{
+  "id" : number;
+  "typename": string;
+  "pic": string;
+  "title": string;
+  "info": string;
+}
+
 Component({
   /**
    * 组件的属性列表
@@ -14,7 +22,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    "homelist": []
+    "homelist": [] as homelistItem[]
   },
 
   attached(){
@@ -25,11 +33,22 @@ Component({
     this.fetchData(urlStr);
   },
 
-
   /**
    * 组件的方法列表
    */
   methods: {
+    getCardInfo(event:WechatMiniprogram.TouchEvent){
+      const index = event.currentTarget.dataset.index;
+      // console.log(index,this.data.homelist[index],this.data.homelist[index].title)
+      const app = getApp()
+
+      app.globalData.selectCity = this.data.homelist[index].title
+
+      wx.navigateTo({
+        url:'/pages/cityinfo/cityinfo'
+      })
+    },
+
     async fetchData(urlStr:string) {
       try {
         const url = urlStr;
