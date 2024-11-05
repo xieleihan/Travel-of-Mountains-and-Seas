@@ -1,32 +1,11 @@
-// pages/user/user.ts
+// pages/userinfo/userinfo.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    functionList:[
-      {
-        "icon":"/assets/icon/nopay.png",
-        "text":"待支付",
-        "color":"#e63f32"
-      },
-      {
-        "icon":"/assets/icon/tring.png",
-        "text":"待出行",
-        "color":"#fcc523"
-      },
-      {
-        "icon":"/assets/icon/oktr.png",
-        "text":"已完成",
-        "color":"#307dee"
-      },
-      {
-        "icon":"/assets/icon/okpay.png",
-        "text":"待评价",
-        "color":"#269745"
-      }
-    ]
+
   },
 
   /**
@@ -83,11 +62,5 @@ Page({
    */
   onShareAppMessage() {
 
-  },
-
-  goToChangavater(){
-    wx.navigateTo({
-      url: '/pages/userinfo/userinfo'
-    })
   }
 })

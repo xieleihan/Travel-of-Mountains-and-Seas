@@ -1,0 +1,15 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class="userinfo">
+  <view class="top">
+    <image src="/assets/images/avater.png" alt=""/>
+  </view>
+  <view class="container">
+    <view class="avaterinfo">
+      <text class="title">这是标题</text>
+      <text class="desc">这是描述</text>
+    </view>
+    <view class="gotoaddress">
+      <view>常去地方</view>
+    </view>
+  </view>
+</view>

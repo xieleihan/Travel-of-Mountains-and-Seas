@@ -1,0 +1,42 @@
+/* pages/userinfo/userinfo.wxss */
+.userinfo{
+  width: 100vw;
+  height: 100vh;
+  .top{
+    width: 100%;
+    height: 300rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(@themeColor, transparent);
+    image{
+      width: 200rpx;
+      height: 200rpx;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+    }
+  }
+  .container{
+    width: 100%;
+    height: calc(100% - 150px);
+    .avaterinfo{
+      width: 100%;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      .title{
+        font-weight: bold;
+        font-size: 40rpx;
+        letter-spacing: 15rpx;
+        margin-bottom: 15rpx;
+      }
+      .desc{
+        letter-spacing: 15rpx;
+      }
+    }
+    .gotoaddress{
+      width: 100%;
+      
+    }
+  }
+}

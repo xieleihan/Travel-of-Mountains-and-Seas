@@ -1,6 +1,6 @@
 <!--pages/user/user.wxml-->
 <view class="user">
-  <view class="avater">
+  <view class="avater" bind:tap="goToChangavater">
     <view class="left">
       <image class="img" src="/assets/images/avater.png" mode=""/>
     </view>

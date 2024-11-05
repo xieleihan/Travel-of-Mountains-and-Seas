@@ -6,7 +6,8 @@
     "pages/user/user",
     "pages/paypal/paypal",
     "pages/cityinfo/cityinfo",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/userinfo/userinfo"
   ],
   "window": {
     "navigationBarTextStyle": "black",
