@@ -5,14 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isOpen:true,
+    paypalList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    const app = getApp();
+    this.setData({
+      paypalList: app.globalData.paypalList
+    })
+    console.log(app.globalData.paypalList)
+    if(this.data.paypalList.length === 0){
+      this.setData({
+        isOpen: false
+      })
+    }else{
+      this.setData({
+        isOpen: true
+      })
+    }
   },
 
   /**

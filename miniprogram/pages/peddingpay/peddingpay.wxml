@@ -1,2 +1,19 @@
 <!--pages/peddingpay/peddingpay.wxml-->
-<text>pages/peddingpay/peddingpay.wxml</text>
+<view class="peddingpay">
+  <view class="topTitle">
+    待支付
+  </view>
+  <view class="container">
+    <block wx:if="{{isOpen}}">
+      <view class="bigBox">
+        
+      </view>
+    </block>
+    <block wx:else="{{isOpen}}">
+      <view class="box">
+        <image class="img" src="/assets/icon/nopayimg.png" mode=""/>
+        <text class="text">暂无订单信息</text>
+      </view>
+    </block>
+  </view>
+</view>

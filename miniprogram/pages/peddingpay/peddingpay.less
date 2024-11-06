@@ -1,1 +1,37 @@
 /* pages/peddingpay/peddingpay.wxss */
+.peddingpay{
+  width: 100vw;
+  height: 100vh;
+  .topTitle{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: @googlegreen;
+  }
+  .container{
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: @bgColor;
+    .box{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .text{
+        margin-top: 15rpx;
+        color: #ccc;
+      }
+    }
+    .bigBox{
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 20rpx 30rpx;
+    }
+  }
+}
