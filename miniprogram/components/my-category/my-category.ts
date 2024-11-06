@@ -40,6 +40,37 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goToOther(event: WechatMiniprogram.TouchEvent){
+      const index = event.currentTarget.dataset.index;
+      // console.log(index)
+      switch(index){
+        case 0:
+          // console.log("这是第一个item");
+          wx.navigateTo({
+            url:"/pages/recommend/recommend"
+          })
+          break;
+        case 1:
+          // console.log("这是第二个item");
+          wx.navigateTo({
+            url:"/pages/sellwell/sellwell"
+          })
+          break;
+        case 2:
+          // console.log("这是第三个item");
+          wx.navigateTo({
+            url:"/pages/special/special"
+          })
+          break;
+        case 3:
+          // console.log("这是第四个item");
+          wx.navigateTo({
+            url:"/pages/feature/feature"
+          })
+          break;
+        default:
+          console.log("没有找到")
+      }
+    }
   }
 })

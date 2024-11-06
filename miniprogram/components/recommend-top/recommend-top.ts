@@ -1,11 +1,32 @@
-// pages/search/search.ts
+// components/recommend-top/recommend-top.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isOpen: false
+    itemList:[
+      {
+        "text":"每日推荐",
+        "pic":"https://picsum.photos/300/300?1",
+        "pic2":"https://picsum.photos/300/300?2"
+      },
+      {
+        "text":"更多人去",
+        "pic":"https://picsum.photos/300/300?3",
+        "pic2":"https://picsum.photos/300/300?4"
+      },
+      {
+        "text":"获得人气",
+        "pic":"https://picsum.photos/300/300?5",
+        "pic2":"https://picsum.photos/300/300?6"
+      },
+      {
+        "text":"不知道呐",
+        "pic":"https://picsum.photos/300/300?7",
+        "pic2":"https://picsum.photos/300/300?8"
+      }
+    ]
   },
 
   /**
@@ -62,19 +83,5 @@ Page({
    */
   onShareAppMessage() {
 
-  },
-  getInputValue(e: any){
-    // console.log(e.detail.value)
-    if(e.detail.value !== ""){
-      // console.log(true)
-      this.setData({
-        isOpen: true
-      })
-    }else{
-      // console.log(false)
-      this.setData({
-        isOpen: false
-      })
-    }
   }
 })

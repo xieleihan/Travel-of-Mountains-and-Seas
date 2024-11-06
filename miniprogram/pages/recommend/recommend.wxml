@@ -1,0 +1,7 @@
+<!--pages/recommend/recommend.wxml-->
+<view class="recommend">
+  <recommend-top />
+  <view class="container">
+    <recommend-swiper />
+  </view>
+</view>

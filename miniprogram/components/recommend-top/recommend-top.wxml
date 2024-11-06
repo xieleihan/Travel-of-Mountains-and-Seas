@@ -1,0 +1,18 @@
+<!--components/recommend-top/recommend-top.wxml-->
+<view class="top">
+  <block wx:for="{{itemList}}" wx:key="index">
+    <view class="item">
+      <view class="itemtop">
+        <text>{{item.text}}</text>
+        <view class="right">
+          <text>查看更多</text>
+          <image class="img" src="/assets/icon/left.png" mode=""/>
+        </view>
+      </view>
+      <view class="smallBox">
+        <image src="{{item.pic}}" mode=""/>
+        <image src="{{item.pic2}}" mode=""/>
+      </view>
+    </view>
+  </block>
+</view>

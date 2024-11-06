@@ -1,11 +1,11 @@
-// pages/search/search.ts
+// pages/feature/feature.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isOpen: false
+
   },
 
   /**
@@ -62,19 +62,5 @@ Page({
    */
   onShareAppMessage() {
 
-  },
-  getInputValue(e: any){
-    // console.log(e.detail.value)
-    if(e.detail.value !== ""){
-      // console.log(true)
-      this.setData({
-        isOpen: true
-      })
-    }else{
-      // console.log(false)
-      this.setData({
-        isOpen: false
-      })
-    }
   }
 })

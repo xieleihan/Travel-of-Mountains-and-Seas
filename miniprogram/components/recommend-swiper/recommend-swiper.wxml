@@ -1,0 +1,13 @@
+<!--components/recommend-swiper/recommend-swiper.wxml-->
+<view class="swiper">
+  <view class="box">
+    <swiper vertical circular class="swiper-wrapper" duration="500" interval="4000" autoplay bindchange="onSwiperChange">
+      <block wx:for="{{swiperList}}" wx:key="index">
+        <swiper-item class="item">
+          <image data-idnex="{{index}}" src="{{item.pic}}" mode="" lazy-load/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="title">{{text}}</view>
+  </view>
+</view>

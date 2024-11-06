@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "recommend-top": "/components/recommend-top/recommend-top",
+    "recommend-swiper":"/components/recommend-swiper/recommend-swiper"
+  }
+}

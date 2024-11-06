@@ -2,7 +2,7 @@
 <view class="category">
   <view class="container">
     <block wx:for="{{categoryList}}" wx:key="index">
-      <view class="item">
+      <view class="item" data-index="{{index}}" bind:tap="goToOther">
         <view class="smallbox" style="background-color: {{item.bgColor}};">
           <image src="{{item.icon}}" alt="" />
         </view>
