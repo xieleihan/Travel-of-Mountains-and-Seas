@@ -4,7 +4,8 @@ interface ShopcarItem {
   num: number | string;
   totalPrice?: number | string;
   isSelected:boolean;
-  title: string
+  title: string,
+  timestamp:string;
 }
 
 interface countItem{
@@ -16,7 +17,8 @@ interface paypayItem {
   picel: number | string;
   num: number | string;
   totalPrice?: number | string;
-  isSelected:boolean
+  isSelected:boolean;
+  timestamp:string;
 }
 
 Page({
@@ -226,7 +228,10 @@ Page({
       if (item.isSelected) {
         totalNum += Number(item.num);
         totalPrice += Number(item.totalPrice);
-        selectedItems.push(item);
+        selectedItems.push({
+          ...item,
+          timestamp: new Date().getTime().toString() // 添加时间戳
+        });
       }
     });
     console.log(totalNum,totalPrice)

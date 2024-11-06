@@ -1,2 +1,4 @@
 <!--pages/vippage/vippage.wxml-->
-<text>pages/vippage/vippage.wxml</text>
+<view class="vippage">
+  <vip-top></vip-top>
+</view>

@@ -1,2 +1,6 @@
 <!--pages/evaluate/evaluate.wxml-->
-<text>pages/evaluate/evaluate.wxml</text>
+<view class="evaluate">
+  <view class="topTitle">
+    待评价
+  </view>
+</view>

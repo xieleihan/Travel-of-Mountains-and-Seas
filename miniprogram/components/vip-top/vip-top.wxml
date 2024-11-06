@@ -1,0 +1,31 @@
+<!--components/vip-top/vip-top.wxml-->
+<view class="top">
+  <view class="betweed">
+    <view class="left"></view>
+    <view class="right">
+      <image class="img" src="/assets/images/avater.png" mode=""/>
+      <view class="smallright">
+        <view class="title">这是用户名</view>
+        <view class="date">到期时间:<text class="small">2099-12-31</text></view>
+      </view>
+      <view class="semicircle"></view>
+    </view>
+  </view>
+  <view class="bottom">
+    <image class="img" src="/assets/icon/v.png" mode=""/>
+    <view class="container">
+      <view class="title">
+        尊享会员
+        <view class="info">你将享有n项权益</view>
+      </view>
+      <view class="smallBox">
+        <block wx:for="{{itemList}}" wx:key="index">
+          <view class="item">
+            <image src="{{item.icon}}" mode=""/>
+            <view>{{item.text}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

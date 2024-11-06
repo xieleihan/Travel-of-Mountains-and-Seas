@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: @googlegreen;
+    background-color: @googlered;
   }
   .container{
     width: 100%;
@@ -32,6 +32,60 @@
       height: 100%;
       box-sizing: border-box;
       padding: 20rpx 30rpx;
+      .date{
+        width: 100%;
+        height: 300rpx;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        padding: 20rpx;
+        border-radius: @radius;
+        .top{
+          width: 100%;
+        }
+        .bottom{
+          width: 100%;
+          height: calc(100% - 20px);
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          .img{
+            width: 60%;
+            margin-top: 30rpx;
+            image{
+              width: 100rpx;
+              height: 100rpx;
+            }
+          }
+          .right{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .totalPicel{
+              color: orange;
+              font-weight: bold;
+            }
+            .sum{
+              color: orange;
+              font-size: 20rpx;
+            }
+            .bottomTop{
+              display: flex;
+              flex-direction: column;
+            }
+            .btn{
+              color: white;
+              background-color: @googlegreen;
+              box-sizing: border-box;
+              padding: 5rpx;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
     }
   }
 }

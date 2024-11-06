@@ -1,2 +1,6 @@
 <!--pages/success/success.wxml-->
-<text>pages/success/success.wxml</text>
+<view class="success">
+  <view class="topTitle">
+    已完成
+  </view>
+</view>

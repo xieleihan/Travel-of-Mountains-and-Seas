@@ -1,0 +1,108 @@
+/* components/vip-top/vip-top.wxss */
+.top{
+  width: 100%;
+  height: 400rpx;
+  .betweed{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .left{
+      width: 30%;
+      height: 100%;
+    }
+    .right{
+      width: 55%;
+      height: 100%;
+      background-color: #404040;
+      border-radius: @radius @radius 0 0;
+      display: flex;
+      padding: 0 30rpx;
+      flex-direction: row;
+      box-sizing: border-box;
+      align-items: center;
+      position: relative;
+      .semicircle{
+        position: absolute;
+        background-color: #404040;
+        bottom: -12.5rpx;
+        left: -12.5rpx;
+        width: 25rpx;
+        height: 25rpx;
+        border-radius: 50%;
+      }
+      .img{
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        background-color: white;
+        margin-right: 20rpx;
+      }
+      .title{
+        color: orange;
+        font-size: 20rpx;
+        margin-bottom: 5rpx;
+      }
+      .date{
+        color: orange;
+        font-size: 20rpx;
+        .small{
+          margin-left: 2rpx;
+        }
+      }
+    }
+  }
+  .bottom{
+    background-color: #404040;
+    width: 100%;
+    height: 300rpx;
+    border-radius: @radius 0 @radius @radius;
+    position: relative;
+    .img{
+      position: absolute;
+      width: 150rpx;
+      height: 150rpx;
+      top: -25%;
+      left: 50rpx;
+    }
+    .container{
+      width: 100%;
+      height: 100%;
+      .title{
+        width: 100%;
+        height: 80rpx;
+        box-sizing: border-box;
+        padding-left: 160rpx;
+        display: flex;
+        color: orange;
+        align-items: flex-end;
+        .info{
+          margin-left: 200rpx;
+          font-size: 20rpx;
+        }
+      }
+      .smallBox{
+        width: 100%;
+        height: calc(100% - 40px);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        // background-color: orange;
+        .item{
+          display: flex;
+          
+          flex-direction: column;
+          align-items: center;
+          image{
+            width: 40rpx;
+            height: 40rpx;
+            border-radius: 50%;
+
+          }
+        }
+      }
+    }
+  }
+}

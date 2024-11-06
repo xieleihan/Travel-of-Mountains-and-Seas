@@ -1,2 +1,15 @@
 <!--pages/waiting/waiting.wxml-->
-<text>pages/waiting/waiting.wxml</text>
+<view class="waiting">
+  <view class="topTitle">
+    待出行
+  </view>
+  <view class="container">
+    <view class="box">
+      <block>
+        <view class="nowaitbox">
+          <text>暂无结果~</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
