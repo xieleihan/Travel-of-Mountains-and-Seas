@@ -36,7 +36,37 @@
     }
     .gotoaddress{
       width: 100%;
-      
+      padding: 0 30rpx;
+      box-sizing: border-box;
+      .goto{
+        margin: 0 auto;
+        margin-top: 50rpx;
+        text-align: center;
+        color: #ccc;
+        position: relative;
+        &::after{
+          content: '';
+          display: block;
+          width: 40%;
+          height: .1px;
+          background-color: #ccc;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &::before{
+          content: '';
+          display: block;
+          width: 40%;
+          height: .1px;
+          background-color: #ccc;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
     }
   }
 }

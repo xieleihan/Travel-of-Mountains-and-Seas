@@ -89,5 +89,68 @@ Page({
     wx.navigateTo({
       url: '/pages/userinfo/userinfo'
     })
+  },
+
+  goToCollect(){
+    wx.navigateTo({
+      url: '/pages/collect/collect'
+    })
+  },
+
+  goTovippage(){
+    wx.navigateTo({
+      url:'/pages/vippage/vippage'
+    })
+  },
+
+  goToSetting(){
+    wx.navigateTo({
+      url:'/pages/setting/setting'
+    })
+  },
+
+  goToPeddingpay(){
+    wx.navigateTo({
+      url:'/pages/peddingpay/peddingpay'
+    })
+  },
+
+  goToWaiting(){
+    wx.navigateTo({
+      url:'/pages/waiting/waiting'
+    })
+  },
+
+  goToSuccess(){
+    wx.navigateTo({
+      url:'/pages/success/success'
+    })
+  },
+
+  goToEvaluate(){
+    wx.navigateTo({
+      url:'/pages/evaluate/evaluate'
+    })
+  },
+
+  goToPages(event: WechatMiniprogram.TouchEvent){
+    const index = event.currentTarget.dataset.index;
+    // console.log(index)
+    switch(index){
+      case 0:
+        this.goToPeddingpay();
+        break;
+      case 1:
+        this.goToWaiting();
+        break;
+      case 2:
+        this.goToSuccess();
+        break;
+      case 3:
+        this.goToEvaluate();
+        break;
+      default:
+        break;
+    }
   }
 })

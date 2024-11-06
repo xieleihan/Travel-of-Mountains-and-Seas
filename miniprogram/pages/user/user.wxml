@@ -16,7 +16,7 @@
   <view class="function">
     <view class="container">
       <block wx:for="{{functionList}}" wx:key="index">
-        <view class="item">
+        <view bind:tap="goToPages" class="item" data-index="{{index}}">
           <image src="{{item.icon}}" mode=""/>
           <text style="color: {{item.color}};">{{item.text}}</text>
         </view>
@@ -25,16 +25,16 @@
   </view>
 </view>
 <view class="card">
-  <view class="left">
+  <view class="left" bind:tap="goTovippage">
     <image class="vipbox" src="/assets/icon/vipbox.png" mode=""/>
     <text>会员</text>
   </view>
   <view class="right">
-    <view class="top">
+    <view class="top" bind:tap="goToCollect">
       <image class="icon" src="/assets/icon/shouchan.png" mode=""/>
       <text>收藏</text>
     </view>
-    <view class="bottom">
+    <view class="bottom" bind:tap="goToSetting">
       <image class="icon" src="/assets/icon/setting.png" mode=""/>
       <text>设置</text>
     </view>

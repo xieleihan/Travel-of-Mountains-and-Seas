@@ -9,7 +9,7 @@
     </view> -->
     <block wx:for="{{homelist}}" wx:key="index">
       <view class="item" data-index="{{index}}" bind:tap="getCardInfo">
-        <image src="{{item.pic}}" mode="" />
+        <image src="{{item.pic}}" mode="" lazy-load />
         <text class="title">{{item.title}}</text>
         <text class="info">{{item.info}}</text>
         <text class="picel">$<text>{{item.picel}}</text></text>

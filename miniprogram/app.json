@@ -13,7 +13,14 @@
     "pages/special/special",
     "pages/feature/feature",
     "components/recommend-top/recommend-top",
-    "components/recommend-swiper/recommend-swiper"
+    "components/recommend-swiper/recommend-swiper",
+    "pages/collect/collect",
+    "pages/vippage/vippage",
+    "pages/setting/setting",
+    "pages/peddingpay/peddingpay",
+    "pages/waiting/waiting",
+    "pages/success/success",
+    "pages/evaluate/evaluate"
   ],
   "window": {
     "navigationBarTextStyle": "black",
