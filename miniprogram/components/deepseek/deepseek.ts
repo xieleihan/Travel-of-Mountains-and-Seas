@@ -1,4 +1,13 @@
 // components/deepseek/deepseek.ts
+import {url} from "../../api/index"
+import {get} from "../../api/request"
+
+interface smslistItem{
+  permissions: string,
+  avater: string,
+  messages: string
+}
+
 Page({
 
   /**
@@ -6,7 +15,14 @@ Page({
    */
   data: {
     inputValue:"",
-    isStyleColor: false
+    isStyleColor: false,
+    smsList:[
+      {
+        "permissions": "left",
+        "avater":"/assets/icon/deepseek.svg",
+        "messages":"我是 DeepSeek，很高兴见到你！我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~"
+      }
+    ] as smslistItem[]
   },
 
   /**
@@ -65,6 +81,7 @@ Page({
 
   },
   getInputvalue(event:any){
+    
     this.setData({
       inputValue: event.detail.value
     })
@@ -106,6 +123,45 @@ Page({
         // 选择文件失败处理
         console.error('选择文件失败：', err);
       }
+    });
+  },
+
+  async fetchData(urlStr:string,data:object) {
+    try {
+      const url = urlStr;
+
+      const response = await get(url,data);
+      console.log('Response:', response.answer.choices[0].message.content);
+      const newMessage: smslistItem = {
+        permissions: "left",
+        avater: "/assets/icon/deepseek.svg",
+        messages: response.answer.choices[0].message.content
+      };
+
+      this.setData({
+        smsList: this.data.smsList.concat(newMessage)
+      });
+      
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  },
+
+  sendMessages(){
+    const urlStr = url + "/ask";
+    const data = {"text": this.data.inputValue}
+    this.fetchData(urlStr,data)
+
+    const newMessage: smslistItem = {
+      permissions: "right",
+      avater: "/assets/images/avater.png",
+      messages: this.data.inputValue
+    };
+
+    this.setData({
+      isStyleColor: false,
+      smsList: this.data.smsList.concat(newMessage),
+      inputValue: "" // 清空输入框
     });
   }
 })

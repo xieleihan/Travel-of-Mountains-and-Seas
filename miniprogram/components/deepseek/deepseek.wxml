@@ -7,7 +7,7 @@
   </view>
 
   <view class="container">
-    <view class="left">
+    <!-- <view class="left">
       <view class="avater">
         <image src="/assets/icon/deepseek.svg" mode=""/>
       </view>
@@ -24,14 +24,24 @@
         我是 DeepSeek，很高兴见到你！
         我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~
       </view>
+    </view> -->
+    <block wx:for="{{smsList}}" wx:key="index">
+      <view class="{{item.permissions}}">
+      <view class="avater">
+        <image src="{{item.avater}}" mode=""/>
+      </view>
+      <view class="message">
+        {{item.messages}}
+      </view>
     </view>
+    </block>
   </view>
 
   <view class="bottomView">
     <view class="bottombox">
       <image bind:tap="chooseFile" class="appendix" src="/assets/icon/huixingzhen.svg" mode=""/>
-      <input bindinput="getInputvalue" class="input" type="text" placeholder="给Deepseek发送信息"/>
-      <view class="upload" style="{{isStyleColor === false ?'background-color: #dbeafe;':'background-color: #4d6bfe;'}}">
+      <input bindconfirm="sendMessages" confirm-type="send" value="{{inputValue}}" bindinput="getInputvalue" class="input" type="text" placeholder="给Deepseek发送信息"/>
+      <view bind:tap="sendMessages" class="upload" style="{{isStyleColor === false ?'background-color: #dbeafe;':'background-color: #4d6bfe;'}}">
         <image src="/assets/icon/upload.svg" mode=""/>
       </view>
     </view>
