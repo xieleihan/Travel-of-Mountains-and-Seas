@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "vip-top":"/components/vip-top/vip-top"
+    "vip-top":"/components/vip-top/vip-top",
+    "mypopup": "/components/mypopup/mypopup"
   }
 }

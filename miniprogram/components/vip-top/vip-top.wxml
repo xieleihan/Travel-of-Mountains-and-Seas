@@ -22,7 +22,7 @@
         <block wx:for="{{itemList}}" wx:key="index">
           <view class="item">
             <image src="{{item.icon}}" mode=""/>
-            <view>{{item.text}}</view>
+            <view class="text">{{item.text}}</view>
           </view>
         </block>
       </view>

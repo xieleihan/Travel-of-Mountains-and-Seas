@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isTwo: true
   },
 
   /**
@@ -62,5 +62,26 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  getIndex(event: WechatMiniprogram.TouchEvent){
+    const index = event.currentTarget.dataset.index;
+    // console.log(index)
+    if(index == 1){
+      // console.log("left")
+      this.setData({
+        isTwo: false
+      })
+    }else{
+      // console.log("rigth")
+      this.setData({
+        isTwo: true
+      })
+    }
+  },
+
+  topPages(){
+    const app = getApp()
+    app.globalData.showModal = true;
   }
 })

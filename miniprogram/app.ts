@@ -32,7 +32,8 @@ App({
       sumtotel:0
     }, //  计数器
     paypalList:[], // 付款的时候的参数列表
-    selectCity:""
+    selectCity:"",
+    showModal: false
   },
   onLaunch() {
     

@@ -1,0 +1,7 @@
+<!--components/mypopup/mypopup.wxml-->
+<modal wx:if="{{showModal}}" position="bottom" bindclose="hideModal">
+  <view class="modal-content">
+    <text>这是一个底部弹出的内容</text>
+    <button bindtap="hideModal">关闭</button>
+  </view>
+</modal>

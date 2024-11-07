@@ -5,4 +5,86 @@
   background-color: @bgColor;
   padding: 20rpx 30rpx;
   box-sizing: border-box;
+  position: relative;
+  .container{
+    margin-top: 20rpx;
+    width: 100%;
+    height: 400rpx;
+    background-color: #404040;
+    border-radius: @radius;
+    
+    .top{
+      width: 100%;
+      height: 100rpx;
+      display: flex;
+      flex-direction: row;
+      .left,.right{
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: @radius @radius 0 0;
+        transition: all .5s;
+        .img{
+          width: 50rpx;
+          height: 50rpx;
+        }
+        text{
+          color: #f9c11b;
+          font-size: 24rpx;
+        }
+      }
+    }
+    .display{
+      width: 100%;
+      height: 300rpx;
+      position: relative;
+      .picel{
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        color: #f9c11b;
+        font-size: 80rpx;
+        .smallpicel{
+          font-size: 50rpx;
+        }
+      }
+      .info{
+        color: #f9c11b;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        letter-spacing: 15rpx;
+      }
+      .btn{
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+        padding: 10rpx 20rpx;
+        box-sizing: border-box;
+        background-color: #f9c11b;
+        color: #404040;
+        border-radius: @radius;
+      }
+    }
+  }
+  .protocol{
+    position: absolute;
+    bottom: 8rpx;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translateX(-50%);
+    image{
+      width: 50rpx;
+      height: 50rpx;
+      margin-right: 10rpx;
+    }
+    text{
+      color:#ccc;
+      font-size: 20rpx;
+    }
+  }
 }

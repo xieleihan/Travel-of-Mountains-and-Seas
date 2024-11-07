@@ -1,4 +1,39 @@
 <!--pages/vippage/vippage.wxml-->
 <view class="vippage">
   <vip-top></vip-top>
+  <view class="container">
+    <view class="top">
+      <view class="left" style="{{isTwo === true ? 'background-color: #f6f8fa;' : ''}}" bind:tap="getIndex" data-index="1">
+        <image class="img" src="/assets/icon/VIP1.png" mode=""/>
+        <text style="{{isTwo === true ? 'color: #404040;' : ''}}">普通会员</text>
+      </view>
+      <view class="right" style="{{isTwo === false ? 'background-color: #f6f8fa;' : ''}}" bind:tap="getIndex" data-index="2">
+        <image class="img" src="/assets/icon/bigVIP.png" mode=""/>
+        <text style="{{isTwo === false ? 'color: #404040;' : ''}}">尊享会员</text>
+      </view>
+    </view>
+    <view class="display">
+      <block wx:if="{{isTwo === false}}">
+        <view class="item">
+          <text class="picel">$<text class="smallpicel">199.00</text></text>
+          <view class="info">畅享普通会员福利</view>
+          <view class="btn" bind:tap="topPages">充值</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="item">
+          <text class="picel">$<text class="smallpicel">299.00</text></text>
+          <view class="info">畅享尊享会员福利</view>
+          <view class="btn"  bind:tap="topPages">充值</view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+  <view class="protocol">
+    <image src="/assets/icon/safe.png" mode=""/>
+    <text>交易安全由卡巴斯基持续保障</text>
+  </view>
+  
+  <mypopup />
 </view>
