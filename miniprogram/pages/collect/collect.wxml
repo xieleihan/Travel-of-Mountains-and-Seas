@@ -4,4 +4,15 @@
     <text>收藏</text>
     <image src="/assets/icon/star.png" mode=""/>
   </view>
+  <view class="container">
+    <block>
+      <view class="item">
+        <image src="{{pic}}" alt=""/>
+        <text class="title">{{title}}</text>
+        <view class="right" bind:tap="next">
+          <image src="/assets/icon/left.png" mode=""/>
+        </view>
+      </view>
+    </block>
+  </view>
 </view>

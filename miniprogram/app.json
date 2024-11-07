@@ -20,7 +20,8 @@
     "pages/peddingpay/peddingpay",
     "pages/waiting/waiting",
     "pages/success/success",
-    "pages/evaluate/evaluate"
+    "pages/evaluate/evaluate",
+    "components/deepseek/deepseek"
   ],
   "window": {
     "navigationBarTextStyle": "black",

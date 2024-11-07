@@ -1,66 +1,62 @@
-// pages/collect/collect.ts
+interface ListItem {
+  pic: string;
+  title: string;
+}
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    collectList: [] as ListItem[],
+    pic: "",
+    title: "",
+    isOpen: true,
+    count: 0, 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad() {
-
+    this.updateCollectList();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow() {
-
+    this.updateCollectList();
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  updateCollectList() {
+    const app = getApp();
+    if (app.globalData.collectList.length !== 0) {
+      this.setData({
+        isOpen: true,
+        collectList: app.globalData.collectList
+      }, () => {
+        // 在 setData 完成后再设置 pic 和 title
+        this.setData({
+          pic: this.data.collectList[0].pic,
+          title: this.data.collectList[0].title
+        });
+      });
+    } else {
+      this.setData({
+        isOpen: false
+      });
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
+  next() {
+    const bignum = this.data.collectList.length;
+    console.log(bignum)
+    let count = this.data.count;
 
-  },
+    if (count < bignum - 1) {
+      count++;
+    } else {
+      count = 0;  // 回到第一张
+    }
+    // console.log(count)
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    // 更新当前的图片和标题以及 count 值
+    this.setData({
+      pic: this.data.collectList[count].pic,
+      title: this.data.collectList[count].title,
+      count: count  // 更新 count
+    });
   }
-})
+});

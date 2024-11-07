@@ -62,5 +62,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  goToDeepseek(){
+    wx.navigateTo({
+      url: '/components/deepseek/deepseek'
+    })
   }
 })

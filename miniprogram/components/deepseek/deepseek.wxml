@@ -1,0 +1,40 @@
+<!--components/deepseek/deepseek.wxml-->
+<view class="deepseek">
+  <view class="topTitle">
+    <image class="logo icon" src="/assets/icon/renwulan.svg" mode=""/>
+    <image class="logo" src="/assets/icon/deepseeklogo.svg" mode=""/>
+    <image class="logo icon" src="/assets/icon/moremessage.svg" mode=""/>
+  </view>
+
+  <view class="container">
+    <view class="left">
+      <view class="avater">
+        <image src="/assets/icon/deepseek.svg" mode=""/>
+      </view>
+      <view class="message">
+        我是 DeepSeek，很高兴见到你！
+        我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~
+      </view>
+    </view>
+    <view class="right">
+      <view class="avater">
+        <image src="/assets/images/avater.png" mode=""/>
+      </view>
+      <view class="message">
+        我是 DeepSeek，很高兴见到你！
+        我可以帮你写代码、读文件、写作各种创意内容，请把你的任务交给我吧~
+      </view>
+    </view>
+  </view>
+
+  <view class="bottomView">
+    <view class="bottombox">
+      <image bind:tap="chooseFile" class="appendix" src="/assets/icon/huixingzhen.svg" mode=""/>
+      <input bindinput="getInputvalue" class="input" type="text" placeholder="给Deepseek发送信息"/>
+      <view class="upload" style="{{isStyleColor === false ?'background-color: #dbeafe;':'background-color: #4d6bfe;'}}">
+        <image src="/assets/icon/upload.svg" mode=""/>
+      </view>
+    </view>
+    <text class="desc">内容由AI生成,请谨慎甄别.</text>
+  </view>
+</view>

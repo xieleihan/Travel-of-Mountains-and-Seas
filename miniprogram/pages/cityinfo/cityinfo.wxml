@@ -8,7 +8,11 @@
     </view>
     </view>
     <view class="function">
-    <view class="shopcar" bind:tap="addInfo">
+      <view class="collect" bind:tap="addCollectlist">
+        <image src="/assets/icon/redcollect.png" mode=""/>
+        <text>收藏</text>
+      </view>
+      <view class="shopcar" bind:tap="addInfo">
       <image src="/assets/icon/shopcar_heightlight.png" mode=""/>
       <text>购物车</text>
     </view>

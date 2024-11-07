@@ -22,4 +22,50 @@
       color: white;
     }
   }
+  .container{
+    width: 100%;
+    height: calc(100% - 125px);
+    padding: 20rpx 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    .item{
+      width: 90%;
+      height: 90%;
+      border: 1px solid #ccc;
+      border-radius: @radius;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      image{
+        width: 100%;
+        height: 70%;
+      }
+      .title{
+        font-weight: bold;
+        font-size: 50rpx;
+        margin-left: 15rpx;
+        margin-top: 15rpx;
+      }
+      .right{
+        position: absolute;
+        bottom: 20rpx;
+        right: 30rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10rpx;
+        border-radius: 50%;
+        background-color: @googlegreen;
+        image{
+          width: 50rpx;
+          height: 50rpx;
+          transform: rotate(-180deg);
+
+        }
+      }
+    }
+  }
 }

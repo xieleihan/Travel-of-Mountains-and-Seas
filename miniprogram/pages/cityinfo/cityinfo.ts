@@ -44,6 +44,32 @@ Page({
     
   },
 
+  addCollectlist(){
+    const app = getApp();
+    const that = this
+    wx.showModal({
+      title: '提示',
+      content: '你打算把该旅游景点添加到收藏夹吗?',
+      success (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          app.globalData.collectList.push({
+            "pic": that.data.pic,
+            "title": that.data.cityname,
+            "num": that.data.num,
+            "isSelected": that.data.isSelected,
+            "picel": that.data.picel,
+            "totalPrice": Number(that.data.num) * Number(that.data.picel)
+          })
+          console.log(app.globalData.collectList)
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    
+  },
+
   async fetchData(urlStr:string,data:object){
     try{
       const url = urlStr;

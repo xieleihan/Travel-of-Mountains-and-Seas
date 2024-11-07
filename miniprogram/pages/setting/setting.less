@@ -1,1 +1,54 @@
 /* pages/setting/setting.wxss */
+.setting{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: @bgColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container{
+    width: 90%;
+    height: 90%;
+    border-radius: @radius;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20rpx 30rpx;
+    .item{
+      width: 100%;
+      height: 100rpx;
+      border: 1px solid #ccc;
+      border-radius: @radius;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30rpx;
+      box-sizing: border-box;
+      margin-bottom: 15rpx;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      image{
+        width: 30rpx;
+        height: 30rpx;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .deepseek{
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    bottom: 30rpx;
+    right: 30rpx;
+    border-radius: 50%;
+    // border: 1px solid #ccc;
+    background-color: white;
+    image{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,2 +1,25 @@
 <!--pages/setting/setting.wxml-->
-<text>pages/setting/setting.wxml</text>
+<view class="setting">
+  <view class="deepseek" bind:tap="goToDeepseek">
+    <image src="/assets/icon/deepseek.svg" mode=""/>
+  </view>
+
+  <view class="container">
+    <view class="item">
+      <text>账号安全</text>
+      <image src="/assets/icon/left.png" mode=""/>
+    </view>
+    <view class="item">
+      <text>关于我们</text>
+      <image src="/assets/icon/left.png" mode=""/>
+    </view>
+    <view class="item">
+      <text>证件信息</text>
+      <image src="/assets/icon/left.png" mode=""/>
+    </view>
+    <view class="item">
+      <text>增值业务许可证</text>
+      <image src="/assets/icon/left.png" mode=""/>
+    </view>
+  </view>
+</view>

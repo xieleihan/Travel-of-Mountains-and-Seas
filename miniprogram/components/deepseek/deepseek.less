@@ -1,0 +1,136 @@
+/* components/deepseek/deepseek.wxss */
+.deepseek{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url('https://cdn.deepseek.com/banner-background.jpeg');
+  background-size: cover;
+  .topTitle{
+    width: 100%;
+    height: 100rpx;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    .logo{
+      height: 50%;
+      width: 50%;
+      &.icon{
+        width: 50rpx;
+      }
+    }
+  }
+
+  .container{
+    width: 100%;
+    height: calc(100% - 121px);
+    box-sizing: border-box;
+    padding: 20rpx 30rpx;
+    overflow-y: scroll;
+    .left{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 15rpx;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .avater{
+        height: auto;
+        image{
+          width: 50rpx;
+          height: 50rpx;
+          border: 1px solid #dce8ff;
+          border-radius: 50%;
+          margin-right: 10rpx;
+        }
+      }
+      .message{
+        width: 80%;
+        height: auto;
+      }
+    }
+    .right{
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      margin-bottom: 15rpx;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .avater{
+        height: auto;
+        image{
+          width: 50rpx;
+          height: 50rpx;
+          border: 1px solid #dce8ff;
+          border-radius: 50%;
+          margin-left: 10rpx;
+        }
+      }
+      .message{
+        width: 80%;
+        height: auto;
+        text-align: end;
+        image{
+          width: 100rpx;
+          height: 50rpx;
+        }
+      }
+    }
+  }
+
+  .bottomView{
+    position: absolute;
+    bottom: 10rpx;
+    left: 0;
+    width: 100%;
+    height: 130rpx;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    .bottombox{
+      background-color: white;
+      width: 100%;
+      height: 100rpx;
+      border: 1px solid #93c5fd;
+      border-radius: @radius;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      box-sizing: border-box;
+      padding: 0 30rpx;
+      .appendix{
+        width: 40rpx;
+        height: 40rpx;
+      }
+      .input{
+        width: 70%;
+        height: 100%;
+      }
+      .upload{
+        // background-color: #dbeafe;
+        box-sizing: border-box;
+        padding: 15rpx 20rpx;
+        border-radius: @radius;
+        image{
+          width: 30rpx;
+          height: 30rpx;
+          fill: white;
+        }
+      }
+    }
+    .desc{
+      margin-top: 10rpx;
+      height: 20rpx;
+      font-size: 20rpx;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ccc;
+    }
+  }
+}

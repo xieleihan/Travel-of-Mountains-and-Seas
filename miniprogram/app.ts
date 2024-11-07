@@ -33,7 +33,8 @@ App({
     }, //  计数器
     paypalList:[], // 付款的时候的参数列表
     selectCity:"",
-    showModal: false
+    showModal: false,
+    collectList:[], // 收藏列表
   },
   onLaunch() {
     
