@@ -1,2 +1,7 @@
 <!--pages/collect/collect.wxml-->
-<text>pages/collect/collect.wxml</text>
+<view class="collect">
+  <view class="top">
+    <text>收藏</text>
+    <image src="/assets/icon/star.png" mode=""/>
+  </view>
+</view>
