@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "homelist":"/components/home-list/home-list"
+    "homelist":"/components/home-list/home-list",
+    "highspeed":"/components/highspeed/highspeed"
   }
 }

@@ -1,2 +1,130 @@
 <!--components/highspeed/highspeed.wxml-->
-<text>components/highspeed/highspeed.wxml</text>
+<view class="highspeed">
+  <view class="container">
+    <view class="top">
+      <view class="left">
+        <image class="ico" src="/assets/icon/favicon.ico" mode=""/>
+        <image src="/assets/icon/XRLTCOrange.png" mode=""/>
+      </view>
+      <text>香港鐵路有限公司</text>
+    </view>
+    <view class="bottom">
+      <view class="checkbox">
+        <view class="section">
+          <picker mode="date" value="{{date}}" start="{{startdate}}" end="{{enddate}}" bindchange="bindDateChange">
+            <view class="picker">
+              出行日期: {{date}}
+            </view>
+          </picker>
+        </view>
+        <view class="section">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+              坐席级别：{{array[index]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="zuowei">
+        <view class="title">座位选择:</view>
+        <view class="info">选定位置:<text class="word">{{selectzuowei}}</text></view>
+        <block wx:if="{{index === 0}}">
+          <view class="item">
+            <view class="left">
+              <view style="{{selectzuowei === 'A' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="A" bind:tap="select">
+                <image src="{{selectzuowei === 'A' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'A' ? 'color: #6098f2;' : 'color: black;'}}">A</text>
+              </view>
+            </view>
+            <view class="right">
+              <view style="{{selectzuowei === 'B' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="B" bind:tap="select">
+                <image src="{{selectzuowei === 'B' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'B' ? 'color: #6098f2;' : 'color: black;'}}">B</text>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{index === 1}}">
+          <view class="item">
+            <view class="left">
+              <view style="{{selectzuowei === 'A' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="A" bind:tap="select">
+                <image src="{{selectzuowei === 'A' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'A' ? 'color: #6098f2;' : 'color: black;'}}">A</text>
+              </view>
+              <view style="{{selectzuowei === 'B' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="B" bind:tap="select">
+                <image src="{{selectzuowei === 'B' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'B' ? 'color: #6098f2;' : 'color: black;'}}">B</text>
+              </view>
+            </view>
+            <view class="right">
+              <view  style="{{selectzuowei === 'C' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="C" bind:tap="select">
+                <image src="{{selectzuowei === 'C' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'C' ? 'color: #6098f2;' : 'color: black;'}}">C</text>
+              </view>
+              <view style="{{selectzuowei === 'D' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="D" bind:tap="select">
+                <image src="{{selectzuowei === 'D' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'D' ? 'color: #6098f2;' : 'color: black;'}}">D</text>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{index === 2}}">
+          <view class="item">
+            <view class="left">
+              <view style="{{selectzuowei === 'A' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="A" bind:tap="select">
+                <image src="{{selectzuowei === 'A' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'A' ? 'color: #6098f2;' : 'color: black;'}}">A</text>
+              </view>
+              <view style="{{selectzuowei === 'B' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="B" bind:tap="select">
+                <image src="{{selectzuowei === 'B' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'B' ? 'color: #6098f2;' : 'color: black;'}}">B</text>
+              </view>
+              <view  style="{{selectzuowei === 'C' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="C" bind:tap="select">
+                <image src="{{selectzuowei === 'C' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'C' ? 'color: #6098f2;' : 'color: black;'}}">C</text>
+              </view>
+            </view>
+            <view class="right">
+              <view style="{{selectzuowei === 'E' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="E" bind:tap="select">
+                <image src="{{selectzuowei === 'E' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'E' ? 'color: #6098f2;' : 'color: black;'}}">E</text>
+              </view>
+              <view style="{{selectzuowei === 'F' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="F" bind:tap="select">
+                <image src="{{selectzuowei === 'F' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'F' ? 'color: #6098f2;' : 'color: black;'}}">F</text>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{index === 3}}">
+          <view class="item">
+            <view class="left">
+              <view style="{{selectzuowei === 'A' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="A" bind:tap="select">
+                <image src="{{selectzuowei === 'A' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'A' ? 'color: #6098f2;' : 'color: black;'}}">A</text>
+              </view>
+              <view style="{{selectzuowei === 'B' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="B" bind:tap="select">
+                <image src="{{selectzuowei === 'B' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'B' ? 'color: #6098f2;' : 'color: black;'}}">B</text>
+              </view>
+              <view  style="{{selectzuowei === 'C' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="C" bind:tap="select">
+                <image src="{{selectzuowei === 'C' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'C' ? 'color: #6098f2;' : 'color: black;'}}">C</text>
+              </view>
+            </view>
+            <view class="right">
+              <view style="{{selectzuowei === 'E' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="E" bind:tap="select">
+                <image src="{{selectzuowei === 'E' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'E' ? 'color: #6098f2;' : 'color: black;'}}">E</text>
+              </view>
+              <view style="{{selectzuowei === 'F' ? 'outline: 1px solid #6098f2' : 'outline: none'}}" class="box" data-index="F" bind:tap="select">
+                <image src="{{selectzuowei === 'F' ? highspeedzuowei.hightlight : highspeedzuowei.no}}" mode=""/>
+                <text style="{{selectzuowei === 'F' ? 'color: #6098f2;' : 'color: black;'}}">F</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,1 +1,103 @@
 /* components/highspeed/highspeed.wxss */
+.highspeed{
+  width: 100%;
+  height: 400rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  .container{
+    width: 100%;
+    height: 400rpx;
+    border: 1rpx solid @googlegreen;
+    border-radius: @radius;
+    background-color: @bgColor;
+    .top{
+      width: 100%;
+      border-bottom: .01px dotted #ccc;
+      height: 100rpx;
+      box-sizing: border-box;
+      padding: 0 30rpx;
+      display: flex;
+      align-items: center;
+      .left{
+        display: flex;
+        align-items: center;
+      }
+      justify-content: space-between;
+      image{
+        height: 50rpx;
+        width: 130rpx;
+      }
+      .ico{
+        width: 40rpx;
+        height: 40rpx;
+        margin-right: 15rpx;
+      }
+      text{
+        color: #ccc;
+        font-size: 24rpx;
+      }
+    }
+    .bottom{
+      width: 100%;
+      height: calc(100% - 50px);
+      box-sizing: border-box;
+      padding: 20rpx;
+      .checkbox{
+        width: 100%;
+        height: 50rpx;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .zuowei{
+        width: 100%;
+        height: 100rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .title{
+          position: absolute;
+          top: 50%;
+          left: 0rpx;
+          transform: translateY(-50%);
+        }
+        .info{
+          position: absolute;
+          top: 50%;
+          right: 0rpx;
+          transform: translateY(-50%);
+          .word{
+            color: orange;
+            margin-left: 5rpx;
+          }
+        }
+        .item{
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          .left,.right{
+            display: flex;
+            flex-direction: row;
+            .box{
+              margin-right: 18rpx;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              box-sizing: border-box;
+            }
+          }
+          .left{
+            margin-right: 30rpx;
+          }
+          image{
+            width: 40rpx;
+            height: 40rpx;
+          }
+        }
+      }
+    }
+  }
+}
