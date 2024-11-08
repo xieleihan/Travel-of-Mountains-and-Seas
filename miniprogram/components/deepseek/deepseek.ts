@@ -167,6 +167,12 @@ Page({
                   }
                 });
                 break;
+              default:
+                wx.showToast({
+                  title: '不受支持的格式',
+                  icon: 'none'
+                });
+                break;
             }
           },
           fail(err) {

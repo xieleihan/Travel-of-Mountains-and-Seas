@@ -100,10 +100,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  onLoad(options: { [key: string]: string }) {
     const app =  getApp();
     this.setData({
-      cityname : app.globalData.selectCity
+      cityname : options.cityname || app.globalData.selectCity
     })
     const urlStr = url +"/public/getCityInfo"
     const data = {"cityname": this.data.cityname}
@@ -156,6 +156,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    return {
+      title:'('+ this.data.cityname +')山海行 --你的出行服务助手',
+      path: 'pages/cityinfo/cityinfo?cityname='+this.data.cityname,
+      imageUrl: 'https://raw.githubusercontent.com/southaki/contentDeliveryNetwork/v0.0.16/vueProjectPoint(test)/waitingbg.png'
+    }
   }
 })

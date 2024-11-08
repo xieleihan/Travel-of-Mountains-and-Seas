@@ -8,14 +8,18 @@
     </view>
     </view>
     <view class="function">
+      <button open-type="share" class="collect">
+        <image src="/assets/icon/share.png" mode=""/>
+        <text>分享</text>
+      </button>
       <view class="collect" bind:tap="addCollectlist">
         <image src="/assets/icon/redcollect.png" mode=""/>
         <text>收藏</text>
       </view>
       <view class="shopcar" bind:tap="addInfo">
-      <image src="/assets/icon/shopcar_heightlight.png" mode=""/>
-      <text>购物车</text>
-    </view>
+        <image src="/assets/icon/shopcar_heightlight.png" mode=""/>
+        <text>购物车</text>
+      </view>
     <view class="picelBox">
       <text class="picel">${{cityinfo.picel}}</text>
     </view>
