@@ -87,6 +87,7 @@
               flex-direction: column;
               align-items: center;
               box-sizing: border-box;
+              
             }
           }
           .left{
@@ -95,6 +96,41 @@
           image{
             width: 40rpx;
             height: 40rpx;
+          }
+        }
+      }
+      .function{
+        width: 100%;
+        height: 100rpx;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .left{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 70%;
+          text{
+            margin: 0 5rpx;
+            color: orange;
+          }
+        }
+
+        .right{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .btn{
+            background-color: @googlegreen;
+            box-sizing: border-box;
+            padding: 10rpx 20rpx;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: @radius;
           }
         }
       }

@@ -10,6 +10,10 @@ Component({
 
   // 组件进入节点树的时候,开始执行这部分
   attached(){
+    const app = getApp()
+    this.setData({
+      cityname: app.globalData.selectCity
+    })
     const date = new Date();
     const haomiao = date.getTime()
     const endhaomiao = haomiao + 1209600000; 
@@ -48,7 +52,8 @@ Component({
     highspeedzuowei:{
       no:"/assets/icon/zuowei.png",
       hightlight:"/assets/icon/zuowei_heightlight.png"
-    }
+    },
+    cityname:''
   },
 
   /**
@@ -85,6 +90,27 @@ Component({
       this.setData({
         selectzuowei: index
       })
+    },
+
+    paytrip(){
+      if(this.data.date !== '' && this.data.selectzuowei !== '' ){
+        const data = { value: true };
+        this.triggerEvent('customEvent', data); // 触发父组件监听的事件
+        const app = getApp()
+        app.globalData.highspeedList.push({
+          "cityname":this.data.cityname,
+          "date":this.data.date,
+          "selectzuowei": this.data.selectzuowei,
+          "type":this.data.array[this.data.index]
+        })
+        
+      }else{
+        wx.showToast({
+          title:'请检查日期和席次是否已经选择',
+          icon:'none'
+        })
+      }
+
     }
   }
 })

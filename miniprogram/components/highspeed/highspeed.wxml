@@ -125,6 +125,15 @@
           </view>
         </block>
       </view>
+      <view class="function">
+        <view class="left">
+          你所选择的是:<text>{{date}}</text>的<text>{{array[index]}}</text>的<text>{{selectzuowei}}</text>座,前往<text>{{cityname}}</text>车次
+        </view>
+        <view class="right" bind:tap="paytrip">
+          <view class="btn">购票</view>
+        </view>
+      </view>
     </view>
   </view>
+  
 </view>

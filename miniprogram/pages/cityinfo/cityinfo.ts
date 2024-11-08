@@ -3,7 +3,7 @@ import {url} from "../../api/index"
 import {get} from "../../api/request"
 
 Page({
-
+  
   /**
    * 页面的初始数据
    */
@@ -15,7 +15,14 @@ Page({
     num:"1",
     isSelected:false,
     totalPrice:"",
-    picel:""
+    picel:"",
+    isOpenTicketing: false
+  },
+
+  handleCustomEvent(event:any) {
+    this.setData({
+      isOpenTicketing:event.detail.value
+    })
   },
 
   addInfo(){
@@ -108,6 +115,7 @@ Page({
     const urlStr = url +"/public/getCityInfo"
     const data = {"cityname": this.data.cityname}
     this.fetchData(urlStr,data)
+    
   },
 
   /**
@@ -161,5 +169,6 @@ Page({
       path: 'pages/cityinfo/cityinfo?cityname='+this.data.cityname,
       imageUrl: 'https://raw.githubusercontent.com/southaki/contentDeliveryNetwork/v0.0.16/vueProjectPoint(test)/waitingbg.png'
     }
-  }
+  },
+  
 })

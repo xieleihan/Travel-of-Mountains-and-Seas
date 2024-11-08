@@ -1,0 +1,13 @@
+<!--components/ticketing/ticketing.wxml-->
+<view class="ticketing" style="{{isOpen === false ?'height:90%;' : 'height:0%'}}">
+  <view class="top">
+    <image bind:tap="close" src="/assets/icon/close.png" mode=""/>
+    <view class="left">
+      <image class="ico" src="/assets/icon/favicon.ico" mode=""/>
+      <image src="/assets/icon/XRLTCOrange.png" mode=""/>
+    </view>
+  </view>
+  <view class="footer">
+    Copyright ©2024 香港鐵路有限公司
+  </view>
+</view>

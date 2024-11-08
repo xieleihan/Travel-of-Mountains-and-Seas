@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "homelist":"/components/home-list/home-list",
-    "highspeed":"/components/highspeed/highspeed"
+    "highspeed":"/components/highspeed/highspeed",
+    "ticketing":"/components/ticketing/ticketing"
   }
 }

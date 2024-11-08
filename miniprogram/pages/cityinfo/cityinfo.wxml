@@ -27,7 +27,7 @@
     <view class="info">
     {{cityinfo.info}}
     </view>
-    <highspeed></highspeed>
+    <highspeed bind:customEvent="handleCustomEvent"></highspeed>
     <view class="other">
       <text>查看更多热门景点</text>
     </view>
@@ -39,4 +39,5 @@
       <text>你来到无人问津的荒漠</text>
     </view>
   </block>
+  <ticketing isopen="{{isOpenTicketing}}" bind:customEvent="handleCustomEvent" wx:if="{{isOpenTicketing}}" ></ticketing>
 </view>

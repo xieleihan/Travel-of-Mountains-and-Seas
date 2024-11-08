@@ -1,0 +1,52 @@
+/* components/ticketing/ticketing.wxss */
+.ticketing{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-radius: @radius @radius 0 0;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: all 1s;
+  .top{
+    width: 100%;
+    height: 100rpx;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    image{
+      width: 40rpx;
+      height: 40rpx;
+    }
+    .left{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 250rpx;
+      image{
+        width: 200rpx;
+        height: 50rpx;
+      }
+      .ico{
+        width: 50rpx;
+        height: 50rpx;
+        margin-right: 10rpx;
+      }
+    }
+  }
+
+  .footer{
+    position: absolute;
+    bottom: 5rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 24rpx;
+    color: #ccc;
+  }
+}

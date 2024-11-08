@@ -35,6 +35,7 @@ App({
     selectCity:"",
     showModal: false,
     collectList:[], // 收藏列表
+    highspeedList:[]
   },
   onLaunch() {
     
