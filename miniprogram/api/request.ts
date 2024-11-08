@@ -30,14 +30,18 @@ export function get(url: string, data?: any): Promise<any> {
  * @param data 请求的数据
  * @returns Promise 对象
  */
-export function post(url: string, data: any): Promise<any> {
+export function post(url: string, data: any,type:string): Promise<any> {
+  if(type === ''){
+    type = 'application/json'
+  }
+
   return new Promise((resolve, reject) => {
     wx.request({
       url: url,
       method: 'POST',
       data: data,
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': type // 默认值
       },
       success: (res) => {
         if (res.statusCode === 200) {

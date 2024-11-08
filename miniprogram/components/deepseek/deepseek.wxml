@@ -30,9 +30,10 @@
       <view class="avater">
         <image src="{{item.avater}}" mode=""/>
       </view>
-      <view class="message">
+      <!-- <view class="message">
         {{item.messages}}
-      </view>
+      </view> -->
+      <rich-text nodes="{{item.messages}}" ></rich-text>
     </view>
     </block>
   </view>
