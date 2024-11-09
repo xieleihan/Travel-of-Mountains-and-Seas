@@ -1,4 +1,7 @@
 // components/ticketing/ticketing.ts
+import {url} from "../../api/index"
+import {get,post} from "../../api/request"
+
 Component({
 
   /**
@@ -15,7 +18,35 @@ Component({
    * 组件的初始数据
    */
   data: {
-    isOpen:true
+    isOpen:true,
+    date:"",
+    highspeedList: [],
+    randomNumber:"",
+    highspeedListIndex: 0,
+    uuid :"",
+    base64:"",
+    radioList:[
+      {
+        "icon":"/assets/icon/eightpass.png",
+        "text":"八达通",
+        "value":0,
+        "checked":false
+      },
+      {
+        "icon":"/assets/icon/Paypal.png",
+        "text":"PayPal",
+        "value":1,
+        "checked":false
+      },
+      {
+        "icon":"/assets/icon/Apple-pay.png",
+        "text":"Apple Pay",
+        "value":2,
+        "checked":false
+      }
+    ],
+    value: 0,
+    translateValue: ''
   },
 
   /**
@@ -28,13 +59,70 @@ Component({
       this.setData({
         isOpen: true
       })
-    }
+      
+    },
+
+    getRandomNumber():string{
+      return Math.floor(Math.random()*15).toString()
+    },
+
+    async fetchData(urlStr:string,data:object,type:string) {
+      try {
+        const url = urlStr;
+        
+        const response = await post(url,data,type);
+        console.log('Response:', response);
+        this.setData({
+          uuid: response.uuid,
+          base64: response.url
+        })
+        
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    },
+
+    radioChange(e: any) {
+      console.log('支付方式改变:', e.detail.value);
+  
+      const items = this.data.radioList
+      for (let i = 0, len = items.length; i < len; ++i) {
+        items[i].checked = items[i].value === e.detail.value
+      }
+
+      const transformStr = - e.detail.value * 100 +'%'
+      console.log(transformStr)
+
+      this.setData({
+        items,
+        value: e.detail.value,
+        translateValue: transformStr
+      })
+    },
   },
 
   ready(){
     this.setData({
       isOpen: this.data.isOpenTicketing
     })
+  },
+
+  async attached(){
+    const date = new Date()
+    // console.log(date.getTime().toString())
+    this.setData({
+      date: date.getTime().toString(),
+      randomNumber: this.getRandomNumber()
+    })
+    setTimeout(()=>{
+      const app = getApp()
+      this.setData({
+        highspeedList: app.globalData.highspeedList,
+        highspeedListIndex: app.globalData.highspeedList.length - 1
+      })
+      const urlStr = url +'/qrcode';
+      this.fetchData(urlStr,{text:this.data.date},"")
+    },2000)
     
   }
 })

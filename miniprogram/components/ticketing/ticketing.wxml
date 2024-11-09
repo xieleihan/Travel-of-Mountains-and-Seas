@@ -1,12 +1,83 @@
 <!--components/ticketing/ticketing.wxml-->
 <view class="ticketing" style="{{isOpen === false ?'height:90%;' : 'height:0%'}}">
   <view class="top">
-    <image bind:tap="close" src="/assets/icon/close.png" mode=""/>
+    <image bind:tap="close" src="/assets/icon/close.png" mode="" />
     <view class="left">
-      <image class="ico" src="/assets/icon/favicon.ico" mode=""/>
-      <image src="/assets/icon/XRLTCOrange.png" mode=""/>
+      <image class="ico" src="/assets/icon/favicon.ico" mode="" />
+      <image src="/assets/icon/XRLTCOrange.png" mode="" />
     </view>
   </view>
+
+  <view class="container">
+    <view class="Ticketing">
+      <view class="top" style="background-image: url('/assets/icon/crt.png');">
+        <view class="number">HK999077</view>
+        <view class="checkTicket">检票口:27A,28A</view>
+        <view class="journey">
+          <view class="left">
+            <view>香港西九龙</view>
+            <view>HK West Kowloon</view>
+          </view>
+          <view class="center">
+            前往
+          </view>
+          <view class="right">
+            <view>{{highspeedList[0].cityname}}</view>
+            <view>English Station</view>
+          </view>
+        </view>
+        <view class="infomation">
+          <view class="date">{{highspeedList[highspeedListIndex].date}}开</view>
+          <view class="type">{{highspeedList[highspeedListIndex].type}}</view>
+          <view class="zuowei">{{randomNumber}}车{{highspeedList[highspeedListIndex].selectzuowei}}座</view>
+        </view>
+        <view class="qrcode">
+          <view class="left">
+            <view class="small">
+              <view>车票遗失不补</view>
+              <view>离港请携带回乡证</view>
+            </view>
+            <view>{{uuid}}</view>
+          </view>
+          <view class="right">
+            <image src="{{base64}}" mode="" />
+          </view>
+        </view>
+      </view>
+      <view class="bottom">
+        <text>{{date}}</text>
+      </view>
+    </view>
+
+    <view class="paypalBtn">
+      <view class="box">
+        <text class="title">支付方式:</text>
+        <radio-group class="smallbox" bindchange="radioChange">
+          <block wx:for="{{radioList}}" wx:key="value">
+            <label class="radio">
+              <radio value="{{item.value}}" checked="{{item.checked}}" />
+              <image src="{{item.icon}}" mode="aspectFit" />
+            </label>
+          </block>
+        </radio-group>
+      </view>
+    </view>
+
+    <view class="paypalBox">
+      <view class="container" style="transform: translateX({{translateValue}} );">
+        <block>
+          <view class="item">1</view>
+        </block>
+        <block>
+          <view class="item">2</view>
+        </block>
+        <block>
+          <view class="item">3</view>
+        </block>
+      </view>
+    </view>
+  </view>
+
   <view class="footer">
     Copyright ©2024 香港鐵路有限公司
   </view>
