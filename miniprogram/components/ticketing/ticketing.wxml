@@ -66,13 +66,65 @@
     <view class="paypalBox">
       <view class="container" style="transform: translateX({{translateValue}} );">
         <block>
-          <view class="item">1</view>
+          <view class="item item1">
+            <view class="safenumber" >输入卡号:
+              <input bindinput="getCardnum" type="text" maxlength="18" placeholder="请输入卡号"/>
+            </view>
+            <view class="safeareo">
+              <view class="safedate">有效期:
+                <input type="text" placeholder="MM" maxlength="2" />/
+                <input type="text" placeholder="YY" maxlength="2" />
+              </view>
+              <view class="safeinput">安全码:
+                <input password maxlength="3" type="safe-password" 	safe-password-length="3" placeholder="CVV"
+                safe-password-cert-path="/minipro.cert"
+                safe-password-time-stamp="1618390369" 
+                safe-password-nonce="1618390369" 
+                safe-password-salt="zefengwang" 
+                safe-password-custom-hash="md5(sha1('foo' + sha256(sm3(password + 'bar'))))"
+                />
+              </view>
+            </view>
+            <view class="btn">
+              <image src="{{cardimg}}" mode="aspectFit"/>
+              支付
+            </view>
+            <view class="suppost">
+              <image src="/assets/icon/visa.png" mode="aspectFit"/>
+              <image src="/assets/icon/mastercard.png" mode="aspectFit"/>
+              <image src="/assets/icon/union.png" mode="aspectFit"/>
+              <image src="/assets/icon/jcb.png" mode="aspectFit"/>
+              <image src="/assets/icon/Diners_Club.png" mode="aspectFit"/>
+              <image src="/assets/icon/ae.png" mode="aspectFit"/>
+              <image src="/assets/icon/discover.png" mode="aspectFit"/>
+            </view>
+          </view>
         </block>
         <block>
-          <view class="item">2</view>
+          <view class="item item2">
+            <view class="input">
+              <input type="text" placeholder="请输入你的PayPal账号"/>
+            </view>
+            <view class="btn">
+              <image src="/assets/icon/Paypal.png" mode="aspectFit"/>
+              支付
+            </view>
+          </view>
         </block>
         <block>
-          <view class="item">3</view>
+          <view class="item item3">
+            <view class="top">
+              <image src="/assets/icon/apple-paybig.png" mode="aspectFit"/>
+            </view>
+            <view class="smallbox">
+              <text>test@wechat.com</text>
+              <image src="/assets/icon/left.png" mode=""/>
+            </view>
+            <view class="btn">
+              <image src="/assets/icon/apple.png" mode=""/>
+              Apple Pay
+            </view>
+          </view>
         </block>
       </view>
     </view>

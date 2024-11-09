@@ -46,7 +46,8 @@ Component({
       }
     ],
     value: 0,
-    translateValue: ''
+    translateValue: '',
+    cardimg:""
   },
 
   /**
@@ -99,6 +100,48 @@ Component({
         translateValue: transformStr
       })
     },
+
+    getCardnum(event:any){
+      let inputvalue = event.detail.value
+      inputvalue = inputvalue.substring(0,2)
+      switch(inputvalue){
+        case '62':
+          this.setData({
+            cardimg:"/assets/icon/union.png"
+          });
+          break;
+        case '52':
+          this.setData({
+            cardimg:"/assets/icon/mastercard.png"
+          });
+          break;
+        case '41':
+          this.setData({
+            cardimg:"/assets/icon/visa.png"
+          });
+          break;
+        case '31':
+          this.setData({
+            cardimg:"/assets/icon/jcb.png"
+          });
+          break;
+        case '37':
+          this.setData({
+            cardimg:"/assets/icon/ae.png"
+          });
+          break;
+        case '35':
+          this.setData({
+            cardimg:"/assets/icon/Diners_Club.png"
+          });
+          break;
+        default:
+          this.setData({
+            cardimg:"/assets/icon/close.png"
+          });
+          break;
+      }
+    }
   },
 
   ready(){
