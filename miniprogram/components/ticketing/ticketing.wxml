@@ -22,7 +22,7 @@
             前往
           </view>
           <view class="right">
-            <view>{{highspeedList[0].cityname}}</view>
+            <view>{{highspeedList[highspeedListIndex].cityname}}</view>
             <view>English Station</view>
           </view>
         </view>
@@ -85,7 +85,7 @@
                 />
               </view>
             </view>
-            <view class="btn">
+            <view bind:tap="sendemail" class="btn">
               <image src="{{cardimg}}" mode="aspectFit"/>
               支付
             </view>

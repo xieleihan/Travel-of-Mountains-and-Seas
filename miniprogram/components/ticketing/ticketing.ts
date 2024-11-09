@@ -2,6 +2,13 @@
 import {url} from "../../api/index"
 import {get,post} from "../../api/request"
 
+interface item{
+  type: string,
+  date: string,
+  selectzuowei: string,
+  cityname: string
+}
+
 Component({
 
   /**
@@ -20,7 +27,7 @@ Component({
   data: {
     isOpen:true,
     date:"",
-    highspeedList: [],
+    highspeedList: [] as item[],
     randomNumber:"",
     highspeedListIndex: 0,
     uuid :"",
@@ -77,6 +84,29 @@ Component({
           uuid: response.uuid,
           base64: response.url
         })
+        
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    },
+
+    async sendGet(urlStr:string) {
+      const app = getApp()
+      try {
+        const url = urlStr;
+        const data={
+          email:"xieleihan@gmail.com",
+          uuid: this.data.uuid,
+          date: this.data.highspeedList[this.data.highspeedListIndex].date,
+          from:"香港西九龙(HK West Kowloon Railway Station)",
+          to: this.data.highspeedList[this.data.highspeedListIndex].cityname,
+          type: this.data.highspeedList[this.data.highspeedListIndex].type,
+          randomNumber:this.data.randomNumber + this.data.highspeedList[this.data.highspeedListIndex].selectzuowei
+
+        }
+        const response = await get(url,data);
+        console.log('Response:', response);
+        
         
       } catch (error) {
         console.error('Error:', error);
@@ -141,6 +171,25 @@ Component({
           });
           break;
       }
+    },
+
+    sendemail(){
+      const that = this
+      wx.showModal({
+        title: '香港铁路公司提示',
+        content: '你确定要支付吗?',
+        success (res) {
+          if (res.confirm) {
+            wx.showToast({
+              title:"你已完成支付,你的购票信息已经发送到你的邮箱,请注意查收!",
+              icon:"none"
+            })
+            that.sendGet(url+"/email/sendemail")
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
     }
   },
 
